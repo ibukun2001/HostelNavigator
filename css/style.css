@@ -1,0 +1,42 @@
+#map {
+    height: 80vh;
+    border-width: medium;
+    z-index: 0;                   /* Map should be behind the entry div */
+}
+#entry {
+    display: flex;                /* Use flexbox for layout */
+    justify-content: space-between; /* Space out FROM and TO */
+    padding: 20px;                /* Add padding around the container */
+    position: relative;           /* Relative positioning */
+    width: 100%;                  /* Full width */
+    z-index: 1;                   /* Make sure it stays above the map */
+}
+
+#suggestions {
+    cursor: pointer;
+    border-radius: 1;
+}
+
+#FROM {
+    border: 2px solid #000;
+    width: 30vw;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 20px auto;
+    left: 20px;
+    position: absolute;
+}
+#suggestions{
+    border-left: 35vw;
+    border-color: #000;
+}
+#TO {
+    border: 2px solid #000; 
+    width: 30vw;            
+    padding: 10px;          
+    box-sizing: border-box; 
+    margin: 20px auto;
+    right: 20px;
+    position: absolute;
+}
+
