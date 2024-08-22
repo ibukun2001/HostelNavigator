@@ -26,6 +26,11 @@ var hostel_style = {
     opacity:1
 }
 
+
+var from = []
+var to = []
+
+
 // DECLARE A FUNCTION TO ZOOM TO LAYER
 function zoomToLayer(layer) {
     map.fitBounds(layer.getBounds());
@@ -52,6 +57,36 @@ $.ajax({
 
 })
 
+
+
+$.ajax({
+    url:'./services/route.py',
+    type: 'GET',
+    success: function(data){
+        if (data.length != 0) {
+            // LOAD THE DATA
+            route = L.geoJSON(data, {
+                style: function (feature) {
+                    return {
+                        color: 'red',
+                        weight: 5,
+                        opacity: 0.7
+                    };
+                }
+            }).addTo(map)
+            zoomToLayer(route)
+
+        }
+    },
+    error: function(data){
+        alert("An error occured while trying to create route.")
+    }
+
+})
+
+
+
+
 function search(){
     let search_text = $('#search_box').val()
     console.log(search_text)
@@ -69,11 +104,16 @@ function search(){
                     }}).addTo(map)
                 zoomToLayer(hostel)
                 map.removeLayer(all_hostels)
+
+                var coords = data.features[0].geometry.coordinates
+                x = coords[0]
+                y = coords[1]
+                console.log(x+','+y)
                 return hostel
             }
         },
         error: function(data){
-            alert("An error occured while trying to retrieve data.")
+            alert("Name not found in the database.\nClick on one of the suggested names")
         }
     
     })
@@ -119,7 +159,7 @@ $(document).click(function(e) {
 
 
 
-
+var loc
 
 function my_location() {
     map.locate({setView: true, maxZoom: 16}); // Locate and zoom in to the user's location
@@ -129,8 +169,9 @@ function my_location() {
 
         L.marker(e.latlng).addTo(map)
             .bindPopup("You are within " + radius + " meters from this point").openPopup();
-
-        L.circle(e.latlng, radius).addTo(map);
+        loc = e.latlng
+        console.log(loc)
+        L.circle(loc, radius).addTo(map);
     }
 
     function onLocationError(e) {
@@ -139,4 +180,7 @@ function my_location() {
 
     map.on('locationfound', onLocationFound);
     map.on('locationerror', onLocationError);
+
 }
+
+console.log(loc)
