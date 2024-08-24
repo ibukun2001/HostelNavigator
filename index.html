@@ -15,13 +15,44 @@
         <div id="entry">
             <div id="FROM">FROM
                 <div class="search">
-                    <input type="text" id="search_box" placeholder="Enter hostel name here" onkeyup="suggest()">
-                    <button type="button" id="search_button" onclick="search()">Search</button>
-                    <button type="button" id="my_location" onclick="my_location()">My Location</button>
+                    <input type="text" id="from_search_box" placeholder="Enter hostel name here" onkeyup="suggest('from')">
+                    <button type="button" id="from_search_button" onclick="search('from')">Search</button>
+                    <button type="button" id="from_my_location" onclick="my_location('from')">My Location</button>
                     <br>
                 </div>
+                <div id="from_suggestions" class="suggestions">Suggestions</div>
             </div>
-            <div id="suggestions">Suggestions</div>
+
+            <div class="route_button">
+                <div class="radio-container">
+                    <label>
+                        <input type="radio" name="mode" value="Car"> Car
+                    </label>
+                    <label>
+                        <input type="radio" name="mode" value="Driving-Shortest"> Driving-Shortest
+                    </label>
+                    <label>
+                        <input type="radio" name="mode" value="Cycling-regular"> Cycling-regular
+                    </label>
+                    <label>
+                        <input type="radio" name="mode" value="Pedestrian"> Pedestrian
+                    </label>
+                </div>
+            </div>
+
+
+                <button type="button" id="route_button" onclick="route()">Create Route</button>
+            </div>
+        
+            <div id="TO">TO
+                <div class="search">
+                    <input type="text" id="to_search_box" placeholder="Enter hostel name here" onkeyup="suggest('to')">
+                    <button type="button" id="to_search_button" onclick="search('to')">Search</button>
+                    <button type="button" id="to_my_location" onclick="my_location('to')">My Location</button>
+                    <br>
+                </div>
+                <div id="to_suggestions" class="suggestions">Suggestions</div>
+            </div>
         </div>
 
             
@@ -43,3 +74,4 @@
     
     </body>
 </html>
+
