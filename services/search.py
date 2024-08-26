@@ -9,10 +9,10 @@ name = form.getvalue('query')
 
 # Connect to the database
 conn = psycopg2.connect(
-dbname="FutaHostels",
-user="postgres",
-password="password",
-host="localhost",
+dbname="Hostels",
+user="default",
+password="lROMAXTd80iS",
+host="ep-dawn-lake-a2p7qy94.eu-central-1.aws.neon.tech",
 port="5432"
 )
 
