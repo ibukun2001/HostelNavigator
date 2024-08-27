@@ -1,42 +1,107 @@
-#map {
-    height: 80vh;
-    border-width: medium;
-    z-index: 0;                   /* Map should be behind the entry div */
+/* General styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
+    display: flex;
+    flex-direction: column;
 }
+
+/* Entry container styling */
 #entry {
-    display: flex;                /* Use flexbox for layout */
-    justify-content: space-between; /* Space out FROM and TO */
-    padding: 20px;                /* Add padding around the container */
-    position: relative;           /* Relative positioning */
-    width: 100%;                  /* Full width */
-    z-index: 1;                   /* Make sure it stays above the map */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 2px solid #000;
+    box-sizing: border-box;
 }
 
-#suggestions {
-    cursor: pointer;
-    border-radius: 1;
-}
-
-#FROM {
+/* Search container styling */
+#FROM, #TO {
     border: 2px solid #000;
-    width: 30vw;
+    width: 45%; /* Adjusted width for desktop view */
     padding: 10px;
     box-sizing: border-box;
-    margin: 20px auto;
-    left: 20px;
-    position: absolute;
-}
-#suggestions{
-    border-left: 35vw;
-    border-color: #000;
-}
-#TO {
-    border: 2px solid #000; 
-    width: 30vw;            
-    padding: 10px;          
-    box-sizing: border-box; 
-    margin: 20px auto;
-    right: 20px;
-    position: absolute;
+    background-color: #fff;
 }
 
+.search-container input {
+    width: calc(100% - 22px); /* Adjust for padding and borders */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+.search-container button {
+    margin-right: 5px;
+}
+
+/* Suggestions styling */
+.suggestions {
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Route control styling */
+.route_button {
+    text-align: center;
+    padding: 10px;
+    background-color: #fff;
+    border-top: 2px solid #000;
+}
+
+.radio-container label {
+    margin-right: 10px;
+}
+
+#route_button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#route_button:hover {
+    background-color: #0056b3;
+}
+
+/* Map styling */
+#map {
+    flex-grow: 1; /* Expand to fill remaining space */
+    z-index: 0; /* Map should be behind the entry and route controls */
+    position: relative;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+    #entry {
+        flex-direction: column; /* Stack items vertically */
+        align-items: stretch; /* Full width for children */
+    }
+
+    #FROM, #TO {
+        width: 100%; /* Full width on mobile */
+        margin-bottom: 10px; /* Add space between sections */
+    }
+
+    .search-container input {
+        width: calc(100% - 22px); /* Keep input within container borders */
+    }
+
+    .route_button {
+        margin-top: 10px; /* Add spacing above route control */
+    }
+
+    #map {
+        height: 50vh; /* Adjust map height for mobile */
+    }
+}

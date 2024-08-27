@@ -11,7 +11,6 @@
 </head>
 
     <body>
-        <div id="map"></div>
         <div id="entry">
             <div id="FROM">FROM
                 <div class="search">
@@ -23,27 +22,6 @@
                 <div id="from_suggestions" class="suggestions">Suggestions</div>
             </div>
 
-            <div class="route_button">
-                <div class="radio-container">
-                    <label>
-                        <input type="radio" name="mode" value="Car"> Car
-                    </label>
-                    <label>
-                        <input type="radio" name="mode" value="Driving-Shortest"> Driving-Shortest
-                    </label>
-                    <label>
-                        <input type="radio" name="mode" value="Cycling-regular"> Cycling-regular
-                    </label>
-                    <label>
-                        <input type="radio" name="mode" value="Pedestrian"> Pedestrian
-                    </label>
-                </div>
-            </div>
-
-
-                <button type="button" id="route_button" onclick="route()">Create Route</button>
-            </div>
-        
             <div id="TO">TO
                 <div class="search">
                     <input type="text" id="to_search_box" placeholder="Enter hostel name here" onkeyup="suggest('to')">
@@ -54,6 +32,29 @@
                 <div id="to_suggestions" class="suggestions">Suggestions</div>
             </div>
         </div>
+
+        <div class="route_button">
+            <div class="radio-container">
+                <label>
+                    <input type="radio" name="mode" value="Car"> Car
+                </label>
+                <label>
+                    <input type="radio" name="mode" value="Driving-Shortest"> Driving-Shortest
+                </label>
+                <label>
+                    <input type="radio" name="mode" value="Cycling-regular"> Cycling-regular
+                </label>
+                <label>
+                    <input type="radio" name="mode" value="Pedestrian"> Pedestrian
+                </label>
+            </div>
+
+            <button type="button" id="route_button" onclick="route()">Create Route</button>
+
+        </div>
+        <div id="map"></div>
+        
+
 
             
         

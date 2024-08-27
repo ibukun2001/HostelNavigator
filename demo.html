@@ -7,33 +7,45 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
-     <link rel="stylesheet" type="text/css" href="css\style.css"/>
+     <link rel="stylesheet" type="text/css" href="css\style copy.css"/>
 </head>
 
     <body>
-        <div id="map"></div>
+       
+        
         <div id="entry">
-            <div id="FROM">FROM
+            <div id="FROM" class="search-container">
+                FROM
                 <div class="search">
-                    <input type="text" id="search_box" placeholder="Enter hostel name here" onkeyup="suggest()">
-                    <button type="button" id="search_button" onclick="search(this)">Search</button>
-                    <button type="button" id="my_location" onclick="my_location()">My Location</button>
-                    <br>
+                    <input type="text" id="from_search_box" placeholder="Enter hostel name here" onkeyup="suggest('from')">
+                    <button type="button" id="from_search_button" onclick="search('from')">Search</button>
+                    <button type="button" id="from_my_location" onclick="my_location('from')">My Location</button>
                 </div>
+                <div id="from_suggestions" class="suggestions"></div>
             </div>
-            <div id="suggestions">Suggestions</div>
-            <div id="TO">TO
-                <div class="search">
-                    <input type="text" id="search_box_to" placeholder="Enter hostel name here" onkeyup="suggest()">
-                    <button type="button" id="search_button_to" onclick="search(this)">Search</button>
-                    <button type="button" id="my_location" onclick="my_location()">My Location</button>
-                    <br>
-                    
+        
+            <div id="route_control">
+                <div class="radio-container">
+                    <label><input type="radio" name="mode" value="Car"> Car</label>
+                    <label><input type="radio" name="mode" value="Driving-Shortest"> Driving-Shortest</label>
+                    <label><input type="radio" name="mode" value="Cycling-regular"> Cycling-regular</label>
+                    <label><input type="radio" name="mode" value="Pedestrian"> Pedestrian</label>
                 </div>
+                <button type="button" id="route_button" onclick="route()">Create Route</button>
+            </div>
+        
+            <div id="TO" class="search-container">
+                TO
+                <div class="search">
+                    <input type="text" id="to_search_box" placeholder="Enter hostel name here" onkeyup="suggest('to')">
+                    <button type="button" id="to_search_button" onclick="search('to')">Search</button>
+                    <button type="button" id="to_my_location" onclick="my_location('to')">My Location</button>
+                </div>
+                <div id="to_suggestions" class="suggestions"></div>
             </div>
         </div>
-
-            
+        
+        <div id="map"></div>
         
 
 
