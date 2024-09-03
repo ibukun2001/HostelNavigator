@@ -7,14 +7,16 @@ import cgi
 import json
 
 #Get inputs from the client
-form = cgi.FieldStorage() 
+form = cgi.FieldStorage()
 from_lat = form.getvalue("from_lat")
 from_lng = form.getvalue("from_lng")
 to_lat = form.getvalue("to_lat")
 to_lng = form.getvalue("to_lng")
+mode = form.getvalue("mode")
+
 
 # Replace with your ORS API key
-api_key = '5b3ce3597851110001cf6248298967db524a4bd1857c38c380b45ccf'
+api_key = '5b3ce3597851110001cf624885c5de68e4b84c28b992dcada700b1c1'
 
 # Initialize the ORS client
 client = openrouteservice.Client(key=api_key)
@@ -25,10 +27,12 @@ coordinates = [
     [to_lng,to_lat]   # End point
 ]
 
+coordinates = [[from_lat,from_lng],[to_lat,to_lng] ]
+
 # Request the shortest route
 route = client.directions(
     coordinates=coordinates,
-    profile='driving-car',
+    profile= mode,
     format='geojson',
     optimize_waypoints=True
 )

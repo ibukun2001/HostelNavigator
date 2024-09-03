@@ -194,11 +194,15 @@ function my_location(type) {
 
 }
 
-function route(){
+let route
+function route_func(){
     // IF BOTH FROM AND TO LOCATIONS ARE DEFINED
     if (start_end.from && start_end.to &&
         typeof start_end.from.lat === 'number' && typeof start_end.from.lng === 'number' &&
         typeof start_end.to.lat === 'number' && typeof start_end.to.lng === 'number' && mode) {
+
+            if (route){map.removeLayer(route)}
+
             from_lat = start_end.from.lat
             from_lng = start_end.from.lng
             to_lat = start_end.to.lat
@@ -211,7 +215,8 @@ function route(){
             'from_lat=' + from_lat+
             '&from_lng=' + from_lng+
             '&to_lat=' + to_lat+
-            '&to_lng=' + to_lng,
+            '&to_lng=' + to_lng+
+            '&mode=' + mode,
 
 
             type: 'GET',

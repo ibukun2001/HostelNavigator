@@ -36,20 +36,17 @@
         <div class="route_button">
             <div class="radio-container">
                 <label>
-                    <input type="radio" name="mode" value="Car"> Car
+                    <input type="radio" name="mode" value="driving-car"> Car
                 </label>
                 <label>
-                    <input type="radio" name="mode" value="Driving-Shortest"> Driving-Shortest
+                    <input type="radio" name="mode" value="cycling-regular"> Cycling-regular
                 </label>
                 <label>
-                    <input type="radio" name="mode" value="Cycling-regular"> Cycling-regular
-                </label>
-                <label>
-                    <input type="radio" name="mode" value="Pedestrian"> Pedestrian
+                    <input type="radio" name="mode" value="foot-walking"> Pedestrian
                 </label>
             </div>
 
-            <button type="button" id="route_button" onclick="route()">Create Route</button>
+            <button type="button" id="route_button" onclick="route_func()">Create Route</button>
 
         </div>
         <div id="map"></div>
