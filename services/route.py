@@ -27,7 +27,6 @@ coordinates = [
     [to_lng,to_lat]   # End point
 ]
 
-coordinates = [[from_lat,from_lng],[to_lat,to_lng] ]
 
 # Request the shortest route
 route = client.directions(
