@@ -7,17 +7,17 @@
       "start": "node server.js"
     },
     "dependencies": {
-      "express": "^4.17.1",             // If you're using Express.js for the server
-      "leaflet": "^1.7.1",              // Leaflet for interactive maps
-      "jquery": "^3.6.0",               // jQuery for DOM manipulation and AJAX
-      "axios": "^0.21.1",               // Optional: for handling HTTP requests on the server
-      "pg": "^8.7.1",                   // PostgreSQL client to connect to the database
-      "fuzzywuzzy": "^1.1.0",           // Fuzzy string matching for suggestions
-      "fuzzywuzzy-js": "^0.3.1"         // A JavaScript version of fuzzy matching (if needed on client side)
+      "express": "^4.17.1",
+      "leaflet": "^1.7.1",
+      "jquery": "^3.6.0",
+      "axios": "^0.21.1",
+      "pg": "^8.7.1",
+      "fuzzywuzzy": "^1.1.0",
+      "fuzzywuzzy-js": "^0.3.1"
     },
     "devDependencies": {},
     "engines": {
-      "node": ">=14.0.0"                // Specify Node.js version
+      "node": ">=14.0.0"
     },
     "author": "Your Name",
     "license": "ISC"
