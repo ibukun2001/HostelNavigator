@@ -41,7 +41,7 @@ function zoomToLayer(layer) {
 
 var all_hostels
 $.ajax({
-    url:'./api/hostels_init.js',
+    url:'./services/hostels_init.py',
     type: 'GET',
     success: function(data){
         if (data.length != 0) {
@@ -89,7 +89,7 @@ function search(type){
     
     //console.log('Search text: '+ search_text)
     $.ajax({
-        url:'./api/search.js?'
+        url:'./services/search.py?'
         +'query=' + search_text,
         type: 'GET',
         success: function(data){
@@ -135,7 +135,7 @@ function suggest(type) {
     
     if (search_text.length > 1) {
         $.ajax({
-            url: './api/suggest.js?' + 'query=' + search_text,
+            url: './services/suggest.py?' + 'query=' + search_text,
             type: 'GET',
             success: function(response) {
                 $(`#${type}_suggestions`).empty().show();
@@ -212,7 +212,7 @@ function route_func(){
 
         console.log(start_end)
         $.ajax({
-            url:'./api/route.js?'+
+            url:'./services/route.py?'+
             'from_lat=' + from_lat+
             '&from_lng=' + from_lng+
             '&to_lat=' + to_lat+
