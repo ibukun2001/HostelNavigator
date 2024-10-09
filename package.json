@@ -1,25 +1,24 @@
 {
-    "name": "hostel-navigator",
-    "version": "1.0.0",
-    "description": "A hostel navigation app using Leaflet and PostgreSQL",
-    "main": "server.js",
-    "scripts": {
-      "start": "node server.js"
-    },
-    "dependencies": {
-      "express": "^4.17.1",
-      "leaflet": "^1.7.1",
-      "jquery": "^3.6.0",
-      "axios": "^0.21.1",
-      "pg": "^8.7.1",
-      "fuzzywuzzy": "^1.1.0",
-      "fuzzywuzzy-js": "^0.3.1"
-    },
-    "devDependencies": {},
-    "engines": {
-      "node": ">=14.0.0"
-    },
-    "author": "Your Name",
-    "license": "ISC"
-  }
-  
+  "name": "hostel-navigator",
+  "version": "1.0.0",
+  "description": "A hostel navigation app using Leaflet and PostgreSQL",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "leaflet": "^1.7.1",
+    "jquery": "^3.6.0",
+    "axios": "^0.21.1",
+    "pg": "^8.7.1",
+    "fuzzywuzzy": "^1.1.0",
+    "fuzzywuzzy-js": "^0.3.1"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "author": "Your Name",
+  "license": "ISC"
+}
