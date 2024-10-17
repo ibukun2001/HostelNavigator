@@ -41,7 +41,7 @@ function zoomToLayer(layer) {
 
 var all_hostels
 $.ajax({
-    url:'./services/hostels_init.py',
+    url:'http://13.60.40.108/HostelNavigator/services/hostels_init.py',
     type: 'GET',
     success: function(data){
         if (data.length != 0) {
