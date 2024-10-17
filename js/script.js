@@ -86,6 +86,7 @@ $('input[name="mode"]').on('change', function() {
 
 function search(type){
     let search_text = $(`#${type}_search_box`).val()
+    
     //console.log('Search text: '+ search_text)
     $.ajax({
         url:'./services/search.py?'
